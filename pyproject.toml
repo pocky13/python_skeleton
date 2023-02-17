@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "python-skeleton"
+version = "0.1.0"
+description = ""
+authors = ["ryo-nakamura <13pocky@gmail.com>"]
+readme = "README.md"
+packages = [{include = "python_skeleton"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.1"
+codecov = "^2.1.12"
+isort = "^5.12.0"
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+pytest-flake8 = "^1.1.1"
+pytest-mccabe = "^2.0"
+pytest-mypy = "^0.10.3"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--mypy",
+  "--cov=python_skeleton",
+  "--cov-report=term-missing",
+]
+flake8-max-line-length = 99
+testpaths = ["tests"]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
